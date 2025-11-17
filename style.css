@@ -1,0 +1,330 @@
+/* css/style.css */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap');
+
+/* --- CSS Variables (Official Dark Theme) --- */
+:root {
+    --primary-bg: #0a0a0a; /* Deeper black for a more premium feel */
+    --secondary-bg: #1a1a1a;
+    --border-color: #333333; /* For subtle separation */
+    --text-color: #f0f0f0; /* Slightly off-white for better readability */
+    --text-secondary: #a0a0a0;
+    --accent-cyan: #00ffff;
+    --accent-magenta: #ff007f; /* Kept for potential secondary highlights */
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* --- Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: black;
+    color: var(--text-color);
+    line-height: 1.7;
+    background-image:url(https://tse2.mm.bing.net/th/id/OIP.ADcXHifUIvLmTm4fYfa5YQHaEo?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+a {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+/* --- Header & Navigation --- */
+.main-header {
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+    /* OFFICIAL CHANGE: Reduced text-shadow for a cleaner look */
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #fff;
+    border-bottom-color: var(--accent-cyan);
+}
+
+/* --- Footer --- */
+.main-footer {
+    background: var(--primary-bg);
+    text-align: center;
+    padding: 2.5rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+/* OFFICIAL CHANGE: Replaced glow with a solid fill for a more professional hover effect */
+.btn:hover {
+    background: var(--accent-cyan);
+    color: var(--primary-bg);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* --- Form Container & Elements (for Login, Register, Contact) --- */
+.form-container {
+    max-width: 550px;
+    margin: 4rem auto;
+    padding: 3rem;
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: var(--font-body);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+.error-message {
+    color: var(--accent-magenta);
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    display: none;
+}
+
+/* --- Home Page --- */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 1)), url('../images/hero-bg.jpg') no-repeat center center/cover;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin-bottom: 2.5rem;
+    color: var(--text-color);
+}
+
+.countdown-section {
+    text-align: center;
+    padding: 5rem 0;
+    background-color: var(--primary-bg);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+#countdown-timer {
+    font-size: 3.5rem;
+    font-family: var(--font-heading);
+    color: var(--accent-cyan);
+}
+
+/* --- News Page & General Page Sections --- */
+.page-header {
+    text-align: center;
+    padding: 5rem 0;
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+.page-header h1 {
+    font-size: 3rem;
+}
+
+.page-section {
+    padding: 5rem 0;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+.news-card {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+/* OFFICIAL CHANGE: Replaced shadow with a border highlight on hover */
+.news-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-cyan);
+}
+
+.news-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.news-card-content {
+    padding: 2rem;
+}
+.news-card-content h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Events & About Page --- */
+.event-item {
+    background-color: var(--secondary-bg);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--accent-cyan);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+.event-item:hover {
+    background-color: #2a2a2a;
+}
+.event-item p {
+    margin: 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-content img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Simplest responsive approach: hide for mobile */
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .event-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .form-container {
+        margin: 2rem auto;
+        padding: 2rem;
+    }
+}
