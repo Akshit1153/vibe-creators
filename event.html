@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Creators - Events & Celebrations</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    
+    /* 🌈 GLOBAL STYLES */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fdf8ff;
+      overflow-x: hidden;
+    }
+
+    h1{
+      color: #d8b91e;
+      margin-bottom: 0.5em;
+      font-weight: 700;
+    }
+
+    h2{
+        color:#690d05;
+        margin-bottom: 0.5em;
+        font-weight:700;
+    }
+
+    h3{
+        color: #0a1a74;
+        margin-bottom: 0.5em;
+        font-weight:700;
+    }
+
+    h1 {
+      font-size: 2.8em;
+    }
+
+    h2 {
+      font-size: 2em;
+      text-align: center;
+      text-decoration: underline;
+    }
+
+ 
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eddcc8;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem; /* reduced padding */
+  position: sticky;
+  top: 0;
+  
+  z-index: 10;
+  
+}
+
+ul li {
+  margin: 0 1.8px; /* less horizontal space */
+  position: relative;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.6rem 0.8rem; /* reduced link padding */
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.2s ease;  text-align: center;
+}
+
+/* underline effect on hover */
+ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #bfa180;
+  transition: width 0.3s ease;
+}
+
+ul li a:hover::after {
+  width: 100%;
+}
+
+/* hover color only */
+ul li a:hover {
+  color: #bfa180;
+}
+
+
+    /* 🎆 HERO SECTION */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("https://as1.ftcdn.net/jpg/03/63/66/88/1000_F_363668823_e4qn6tjoEeaC0HftGZwTbfJKMe0nwShR.jpg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .hero h1 {
+      font-size: 3.2em;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero p {
+      margin: 10px 0 30px;
+      font-size: 1.1em;
+    }
+
+    .cta-button {
+      background-color: #8a0488;
+      color: white;
+      padding: 12px 28px;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: 0.4s;
+    }
+
+    .cta-button:hover {
+      background-color: #dc23ad;
+      transform: translateY(-3px);
+    }
+
+    /* ✨ SECTIONS */
+    .section {
+      padding: 70px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #fef9ff 60%, #f3e9ff);
+      animation: fadeUp 1.2s ease-in;
+    }
+
+    .section img {
+      border-radius: 10px;
+      margin: 10px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .section img:hover {
+      transform: scale(1.05);
+    }
+
+    /* 🎉 BENEFITS */
+    .benefits-grid {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .benefit-card {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      width: 300px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-10px);
+      background: linear-gradient(135deg, #c2b6ff, #f9f4ff);
+    }
+
+    /* 🕒 SCHEDULE */
+    .schedule-table {
+      width: 90%;
+      max-width: 800px;
+      margin: 30px auto;
+      border-collapse: collapse;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .schedule-table th, .schedule-table td {
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+
+    .schedule-table th {
+      background-color: #2a2576;
+      color: white;
+    }
+
+    .schedule-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* 💫 FINAL CTA */
+    .cta-final {
+      background: linear-gradient(to right, #b5a8ff, #dfc3ff);
+      padding: 80px 20px;
+      color: #222;
+      text-align: center;
+    }
+
+    .cta-final h2 {
+      color: #222;
+      margin-bottom: 15px;
+      
+    }
+
+    /* ⚙ FOOTER */
+    footer {
+      background-color: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9em;
+    }
+
+    /* 🌟 ANIMATIONS */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* 📱 RESPONSIVE */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      .benefit-card {
+        width: 90%;
+      }
+
+      .hero {
+        padding: 80px 10px;
+      }
+
+      .section img {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 🧭 NAVBAR -->
+  <ul>
+    <li> <a href="index.html">Home</a></li>
+            <li><a href="about.html">About US</a></li>
+            <li><a href="event.html">Event</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+  </ul>
+
+  <!-- 🎆 HERO -->
+  <header id="home" class="hero">
+    <h1>✨ Vibe Creators Event ✨</h1>
+    <p>Date: October 31 | Friday | 7:00 PM</p>
+    <p>The ultimate destination for weddings, concerts, and celebrations — creating memories that last forever.</p>
+    <p>The must-attend summit for Music lovers and Rock/Pop fans to explore the future of live music and to celebrate the power of music.</p>
+    <a href="#tickets" class="cta-button">Get Your Tickets</a>
+  </header>
+
+  <!-- 💍 EVENTS SECTION -->
+  <section id="about" class="section">
+    <h2>Our Signature Events</h2>
+    <div>
+      <h3>🎉 Weddings</h3>
+      <img src="https://img.staticmb.com/mbcontent/images/crop/uploads/2023/8/Heaven_4_0_1200.jpg.webp" height="250">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZmBbWkib-0ekSwXdNV18olgqN_Ofd0P9wXw&s" height="250">
+    </div>
+
+    <div>
+      <h3>🎂 Birthday Parties</h3>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdU0xTPHPvSvmrnMYifhMuzG6ETwFapRJpPw&s" height="250">
+      <img src="https://rukminim2.flixcart.com/image/480/640/xif0q/birthday-combo/1/3/8/black-blue-birthday-party-decoration-for-men-bday-decor-with-original-imagp5cgebuujgnz.jpeg?q=90" height="250">
+    </div>
+
+    <div>
+      <h3>🎵 Concerts</h3>
+      <img src="https://newsimg.koreatimes.co.kr/2024/02/21/96067174-c0ec-43f3-a665-80d3e4014aaf.jpg?w=1200" height="250">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN8HvXeeP-FeG8hrtpctCwI6aVThS0DO3HCA&s" height="250">
+    </div>
+
+    <div>
+      <h3>🎭 Festivals</h3>
+      <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1236319642.jpg?c=original" height="250">
+      <img src="https://appealingindia.com/wp-content/uploads/2018/11/diwali-1054212_960_720_zq8lqa_314777ba5.webp" height="250">
+    </div>
+  </section>
+
+  <!-- 💡 BENEFITS -->
+  <section class="section">
+    <h2>Why Attend Our Events?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <h3>Network</h3>
+        <p>Meet passionate people who share your love for celebration and creativity.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Learn</h3>
+        <p>Get inspiration from expert planners, artists, and performers.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Experience</h3>
+        <p>Immerse yourself in stunning setups, live music, and great vibes!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🕒 SCHEDULE -->
+  <section id="agenda" class="section">
+    <h2>Event Schedule</h2>
+    <table class="schedule-table">
+      <tr><th>Time</th><th>Activity</th></tr>
+      <tr><td>9:00 AM</td><td>Registration & Coffee</td></tr>
+      <tr><td>10:00 AM</td><td>Keynote Speaker: Villa 04</td></tr>
+      <tr><td>11:30 AM</td><td>Breakout Sessions</td></tr>
+      <tr><td>1:00 PM</td><td>Networking Lunch</td></tr>
+    </table>
+  </section>
+
+  <!-- 🌟 FINAL CTA -->
+  <section id="tickets" class="cta-final">
+    <h2>Ready to Join Us?</h2>
+    <p>Don't miss out on this unique opportunity. Spaces are limited!</p>
+    <br>
+    <a href="contact-us.html" class="cta-button">Register Now</a>
+  </section>
+
+  <!-- 🦶 FOOTER -->
+  <footer id="contact">
+    <p>&copy; 2025 Vibe Creators. All Rights Reserved.</p>
+    <p>Venue: Dream Villa | Contact: info@vibecreators.com</p>
+  </footer>
+  
+</body>
+</html>
+
